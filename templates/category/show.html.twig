@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégorie : {{ category.name }}{% endblock %}
+
+{% block body %}
+
+    <h1>Catégorie :
+        {{ category.name }}</h1>
+    <div class="row">
+        {% for p in programs %}
+            <div class="col-3">
+                <div class="card">
+                    <img class="img-fluid" src="{{ p.poster }}"  alt="{{ p.title }}">
+                </div>
+                <div class="card-body">
+                    <a href="{{ path('program_show', { 'id': p.id })}}" ><h4 class="card-title">{{ p.id }} - {{ p.title }}</h4></a>
+
+                    <span class="badge badge-info">
+						{{ p.category.name }}
+                    </span>
+
+                    <p class="card-text">{{ p.summary }}</p>
+                    <a href="{{ path('program_show', { 'id': p.category.id })}}" class="btn btn-primary btn-sm">Voir la fiche</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+

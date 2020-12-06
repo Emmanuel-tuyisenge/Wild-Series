@@ -13,8 +13,9 @@
 
 
         <img src="{{ asset('build/path_to_image.png') }}" alt=""/>
-
+        <div class="container">
         {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
