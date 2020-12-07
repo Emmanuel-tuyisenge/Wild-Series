@@ -26,7 +26,7 @@ class ProgramType extends AbstractType
                 ]
             ])
             ->add('summary', TextareaType::class, [
-                'label' => 'Description courte',
+                'label' => 'Description',
                 'attr' => [
                     'placeholder' => 'Tapez une description assez courte mais parlante'
                 ]
