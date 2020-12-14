@@ -6,6 +6,7 @@ use App\Repository\ProgramRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
@@ -21,11 +22,22 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="Ne me laisse pas tout vide")
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @ORM\Column(name="title", type="string", length=255, unique=true)
+     * @Assert\Type("string")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Regex(
+     *     pattern="/plus belle la vie/i",
+     *     match=false,
+     *     message="On parle de vraies séries ici"
+     * )
+     *@Assert\NotBlank(message="ne me laisse pas tout vide")
      */
     private $summary;
 
