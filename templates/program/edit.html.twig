@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Season{% endblock %}
+
+{% block body %}
+    <h1>Editer le program
+        {{ program.title }}</h1>
+
+    {{ form_start(form) }}
+
+    {{ form_errors(form)}}
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.title)}}
+            {{ form_row(form.summary) }}
+            {{ form_row(form.poster) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.country)}}
+            {{ form_row(form.year) }}
+            {{ form_row(form.category) }}
+            {{ form_row(form.actors) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fa fa-save"></i>
+        save
+    </button>
+
+    {{ form_end(form)}}
+
+    <a href="{{ path('program_index') }}">back to list</a>
+{% endblock %}

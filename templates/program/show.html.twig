@@ -22,9 +22,16 @@
             </ul>
         </div>
     </div>
+    <div class="row">
+        {% if is_granted("ROLE_ADMIN") %}
+            <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+        {%endif%}
+    </div>
 
-    <a href="{{ path('category_index') }}">
-        Retour à la liste des catégories
-    </a>
+    <div class="row">
+        <a href="{{ path('category_index') }}">
+            Retour à la liste des catégories
+        </a>
+    </div>
 
 {% endblock %}
