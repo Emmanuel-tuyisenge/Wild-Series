@@ -29,10 +29,32 @@
             </tr>
         </tbody>
     </table>
+    <p>Avis:</p>
+    <ul>
+        {% for comment in episode.comments %}
+        <li>
+            <span class="fa fa-star checked">{{ comment.rate }}/5</span>
+            <p> {{ comment.comment }}</p>
+            {% if is_granted("ROLE_ADMIN") or app.user == comment.author %}
+                <p>{%  include('comment/_delete_form.html.twig') %}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% if app.user %}
 
-    <a href="{{ path('episode_index') }}">back to list</a>
+        {% include '/comment/_form.html.twig' %}
 
+    {% else %}
+        <h6>Vous devez être connecté pour donner votre avis !</h6>
+        <a href="{{ path('app_login')}}" class="btn btn-success">Connexion</a>
+        ou
+        <a href="">Créer un compte</a>
+    {% endif %}
+    <div>
+        <a href="{{ path('episode_index') }}">back to list</a>
+    </div>
     <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">edit</a>
 
-    {{ include('episode/_delete_form.html.twig') }}
+{#  {{ include('episode/_delete_form.html.twig') }} #}
 {% endblock %}

@@ -2,6 +2,9 @@
 body {
   background-color: white;
 
+  .checked {
+    color: orange;
+  }
 }
 .navbar-brand {
     color: $secondary;
@@ -9,6 +12,3 @@ body {
     font-weight: bold;
 
 }
-
-
-

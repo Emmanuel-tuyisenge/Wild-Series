@@ -32,5 +32,11 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        {% if app.user %}
+            {{ app.user.email }}
+            <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+        {% else %}
+            <a href="{{ path('app_login') }}"> Se connecter</a>
+        {% endif %}
     </div>
 </nav>
