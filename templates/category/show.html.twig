@@ -14,14 +14,14 @@
                     <img class="img-fluid" src="{{ p.poster }}"  alt="{{ p.title }}">
                 </div>
                 <div class="card-body">
-                    <a href="{{ path('program_show', { 'id': p.id })}}" ><h4 class="card-title">{{ p.id }} - {{ p.title }}</h4></a>
+                    <a href="{{ path('program_show', { 'slug': p.slug })}}" ><h4 class="card-title">{{ p.id }} - {{ p.title }}</h4></a>
 
                     <span class="badge badge-info">
 						{{ p.category.name }}
                     </span>
 
                     <p class="card-text">{{ p.summary }}</p>
-                    <a href="{{ path('program_show', { 'id': p.category.id })}}" class="btn btn-primary btn-sm">Voir la fiche</a>
+                    <a href="{{ path('program_show', { 'slug': p.category.id })}}" class="btn btn-primary btn-sm">Voir la fiche</a>
                 </div>
             </div>
         {% endfor %}
