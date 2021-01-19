@@ -11,3 +11,5 @@ privious videos comming soon 😊😉😉😉🎶
 =>[18 - Symfony : Envoi d’e-mail](https://www.loom.com/share/fc62e18bfd34439a86942abe8b8282a0)
 =>[19 - Symfony : Gestion des utilisateurs](https://www.loom.com/share/3a998036e87e4b29b034f79b341ddcf5)
 =>[20 - Symfony : Sécurisons nos routes.](https://www.loom.com/share/e1eb5366e3e54909a869bbacb0b281a4)
+=>[21 - Symfony : Inscription d’un utilisateur](https://www.loom.com/share/c0fdd53f401341a7812e0a0a8bc87e66)
+=>[22 - Symfony : Requêtes personnalisées](https://www.loom.com/share/acfcb600b63f4825b4130dc322f25dd5)
